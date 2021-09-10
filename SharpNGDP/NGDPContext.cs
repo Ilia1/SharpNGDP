@@ -18,7 +18,7 @@
             RibbitPort = 1119,
 
             PreferredCDNs = new[] { "us", "eu" },
-            Platform = "Windows",
+            Platform = "OSX",
 
             LocalCache = "cache"
         };
