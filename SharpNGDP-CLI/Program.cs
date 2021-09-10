@@ -16,7 +16,7 @@ namespace SharpNGDP
             //printSummary();
             //printProducts();
             //downloadWoWConfigs();
-            installProduct("wow_classic_beta");
+            installProduct("hsb");
 
             readLoop();
         }
@@ -58,7 +58,7 @@ namespace SharpNGDP
         {
             var ngdp = new NGDPClient();
             // Only known WoW products
-            var productNames = new string[] { "wow", "wow_beta", "wow_classic", "wow_classic_beta", "wowdev", "wowe1", "wowe2", "wowe3", "wowt", "wowv", "wowz" };
+            var productNames = new string[] { "wow", "wow_beta", "wow_classic", "wow_classic_beta", "wowdev", "wowe1", "wowe2", "wowe3", "wowt", "wowv", "wowz", "hsb"};
             // Filter inactive products
             var summary = ngdp.GetSummary();
             var filteredProductNames = productNames.Where(p => summary.Any(s => s.Product == p && string.IsNullOrEmpty(s.Flags)));
