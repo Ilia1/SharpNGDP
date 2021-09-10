@@ -45,10 +45,12 @@ namespace SharpNGDP.Files
                 {
                     for (var i = 0; i < BLTEData.Length; i++)
                     {
-                        BLTEData[i] = new BLTEDataBlock();
-                        BLTEData[i].Read(br, BLTEChunkInfo.Chunks[i].CompressedSize);
-
-                        bw.Write(ReadDatablock(BLTEChunkInfo.Chunks[i], BLTEData[i]));
+                        if (BLTEChunkInfo!=null)
+                        {
+                            BLTEData[i] = new BLTEDataBlock();
+                            BLTEData[i].Read(br, BLTEChunkInfo.Chunks[i].CompressedSize);
+                            bw.Write(ReadDatablock(BLTEChunkInfo.Chunks[i], BLTEData[i]));
+                        }
                     }
 
                     Buffer = ms.ToArray();
