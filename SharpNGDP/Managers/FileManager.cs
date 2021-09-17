@@ -37,6 +37,8 @@ namespace SharpNGDP.Managers
 
                         var res = NGDPClient.TACTClient.Get(req);
                         WriteStreamToFile(res.GetStream(), fp);
+                        Console.WriteLine($"Delete {fp}");
+                        System.IO.File.Delete(fp);
 
                         return res;
                     }
